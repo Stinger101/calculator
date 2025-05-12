@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        button {
+            height:40px;
+            border-radius: 8px;
+            font-size: 20px;
+            background-color: #AFF2DA;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body style="font-family: 'K2D', sans-serif;">
+    <div style="background-color: #AFF2DA; display:flex; justify-content: space-between;">
+        <div style="display: flex; gap:10px;">
+            <img style="width: 48px;"  src="https://th.bing.com/th/id/OIP.qsNtPHMcga070N5vHbMOvAHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+            <h3 style="font-family: 'K2D', sans-serif; text-transform: uppercase;">Calcky</h3>
+        </div>
+        <div style="margin-top: auto; margin-bottom: auto; display: flex; gap: 10px;">
+            <a  style="color:black; text-decoration: none;" href="">scientific</a>
+            <a style="color:black; text-decoration: none;" href="">history</a>
+        </div>
+    </div>
+
+    <div style="width:60%;margin-left: auto; margin-right: auto; margin-top: 30px;">
+        <div style="height: 20vh; background-color: #79e4a5; border: 2px solid #0297a8; border-radius: 10px; display: flex; justify-content: end; align-items: end;">
+            <p id="display" style="font-size: 40px; margin-right: 5px;">0</p>
+        </div>
+        <div style="margin-top: 20px; display:grid; grid-template-columns: auto auto auto auto; gap:10px;">
+            <button onclick="setDisplay('1')">1</button>
+            <button onclick="setDisplay('2')">2</button>
+            <button onclick="setDisplay('3')">3</button>
+            <button onclick="setDisplay('+')">+</button>
+            <button onclick="setDisplay('4')">4</button>
+            <button onclick="setDisplay('5')">5</button>
+            <button onclick="setDisplay('6')">6</button>
+            <button onclick="setDisplay('-')">-</button>
+            <button onclick="setDisplay('7')">7</button>
+            <button onclick="setDisplay('8')">8</button>
+            <button onclick="setDisplay('9')">9</button>
+            <button onclick="setDisplay('/')">/</button>
+            <button onclick="setDisplay('0')">0</button>
+            <button onclick="setDisplay('.')">.</button>
+            <button onclick="setDisplay('*')">x</button>
+            <button onclick="calculate()">=</button>
+        </div>
+        <button onclick="clearDisplay()"  style="width:100%; margin-top: 10px; background-color: indianred; color: whitesmoke; text-transform: uppercase;">Clear</button>
+    </div>
+<script>
+    let input="";
+    function setDisplay(params) {
+        input=input+params;
+        document.getElementById("display").innerText=input;
+    }
+    function  calculate() {
+        let solution = eval(input);
+        console.log(solution);
+        input = solution;
+        document.getElementById("display").innerText=solution;
+
+    }
+    function clearDisplay(){
+        input = "";
+        document.getElementById("display").innerText=input;
+
+    }
+</script>  
+</body>
+</html>
